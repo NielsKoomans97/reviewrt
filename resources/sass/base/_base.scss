@@ -1,0 +1,10 @@
+@use "../config/variables" as *;
+
+a {
+    padding: 10px;
+
+    &:hover {
+        background-color: blue;
+        transition: 150ms all;
+    }
+}

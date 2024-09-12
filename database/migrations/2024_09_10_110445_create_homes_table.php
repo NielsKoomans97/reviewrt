@@ -11,14 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('movies', function (Blueprint $table) {
+        Schema::create('homes', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->mediumText('title');
-            $table->longText('summary');
-            $table->longText('poster_path');
-            $table->smallInteger('rating');
-            $table->unsignedBigInteger('imdb_id');
         });
     }
 
@@ -27,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('movies');
+        Schema::dropIfExists('homes');
     }
 };

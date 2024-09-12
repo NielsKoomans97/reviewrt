@@ -16,6 +16,8 @@ return new class extends Migration
             $table->timestamps();
             $table->mediumText('title');
             $table->longText('description');
+            $table->smallInteger('rating');
+            $table->smallInteger('review_rating');
             $table->unsignedBigInteger('creator_id');
             $table->unsignedBigInteger('movie_id');
             

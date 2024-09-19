@@ -1,0 +1,67 @@
+@use "../config/variables" as *;
+
+div.carrousel {
+    position: relative;
+
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: repeat(10, auto);
+
+    align-items: center;
+
+    overflow: hidden;
+
+    width: 500px;
+    border-radius: 4px;
+
+    padding: 0 50px;
+
+    button {
+        position: absolute;
+
+        height: 100%;
+
+        border: unset;
+        outline: unset;
+
+        background-color: transparentize(map-get($map: $colors, $key: button-default), 0.8);
+
+        i {
+            background-color: transparent;
+            color: transparentize($color: map-get($colors, icon-color), $amount: 0.8);
+
+            font-size: map-get($map: $typo, $key: arrow-size);
+        }
+
+        transition: 150ms all;
+        cursor: pointer;
+
+        &.scroll-back {
+            margin-right: 10px;
+
+            justify-self: flex-start;
+        }
+
+        &.scroll-forward {
+            margin-left: 10px;
+
+            justify-self: flex-end;
+        }
+
+        &:hover {
+            background-color: map-get($map: $colors, $key: button-hover);
+
+            i {
+                color: map-get($map: $colors, $key: icon-color);
+            }
+        }
+
+        &:active {
+            background-color: map-get($map: $colors, $key: button-active);
+
+            i {
+                color: map-get($map: $colors, $key: icon-color);
+            }
+        }
+    }
+}

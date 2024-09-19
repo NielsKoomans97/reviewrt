@@ -22,7 +22,6 @@ return new class extends Migration
             $table->unsignedBigInteger('movie_id');
             
             $table->foreign('creator_id')->references('id')->on('users');
-            $table->foreign('movie_id')->references('id')->on('movies');
         });
     }
 

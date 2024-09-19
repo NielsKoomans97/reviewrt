@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Review;
+use \Auth;
 use Illuminate\Http\Request;
 
 class ReviewController extends Controller
@@ -12,7 +13,9 @@ class ReviewController extends Controller
      */
     public function index()
     {
-        //
+        $reviews = Review::all();
+
+        return view('reviews.index', compact('reviews'));
     }
 
     /**
@@ -20,7 +23,11 @@ class ReviewController extends Controller
      */
     public function create()
     {
-        //
+        if (!Auth::check()) {
+            return redirect(route(name: 'login'));
+        }
+
+        return view('reviews.create');
     }
 
     /**
@@ -28,7 +35,17 @@ class ReviewController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $review = new Review();
+        $review->title = $request['review-title'];
+        $review->description = $request['review-summary'];
+        $review->rating = 0;
+        $review->review_rating = 0;
+        $review->creator_id = Auth::user()->id;
+        $review->movie_id = $request['movie-id'];
+
+        $review->save();
+
+        redirect(route('reviews.index'));
     }
 
     /**
@@ -36,7 +53,7 @@ class ReviewController extends Controller
      */
     public function show(Review $review)
     {
-        //
+        return view('reviews.view', compact('review'));
     }
 
     /**

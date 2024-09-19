@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->mediumText('name');
+            $table->longText('poster_url');
             $table->unsignedBigInteger('imdb_id');
         });
     }

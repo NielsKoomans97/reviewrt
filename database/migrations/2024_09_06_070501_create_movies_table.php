@@ -17,6 +17,7 @@ return new class extends Migration
             $table->mediumText('title');
             $table->longText('summary');
             $table->longText('poster_path');
+            $table->json('actors');
             $table->smallInteger('rating');
             $table->unsignedBigInteger('imdb_id');
         });

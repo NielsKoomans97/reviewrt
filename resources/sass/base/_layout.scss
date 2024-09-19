@@ -1,7 +1,12 @@
 @use "screen" as *;
+@use '../config/variables' as *;
 
 body {
     margin: 0 auto;
+
+    box-sizing: border-box;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
     @include screen-xxxl {
         width: $screen-xxl;
@@ -33,7 +38,12 @@ body {
 }
 
 .content{
-    height: 98vh;
+    height: 93vh;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: map-get($map: $colors, $key: body-default);
 }
 
 section {
@@ -51,3 +61,4 @@ section {
         display: grid;
     }
 }
+

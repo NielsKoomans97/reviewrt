@@ -1,0 +1,22 @@
+@use '../config/variables' as *;
+
+div.review-list{
+    display: flex;
+    
+    flex-direction: column;
+}
+
+a.review{
+    display: flex;
+
+    flex-direction: column;
+    align-items: flex-start;
+
+    width: -webkit-fill-available;
+
+    border-radius: unset;
+
+    h3{
+        margin-top: unset;
+    }
+}

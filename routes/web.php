@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\MovieController;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,7 +17,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::resource('/', HomeController::class);
-Route::resource('movies', MovieController::class);
+Route::resource('reviews', ReviewController::class);
+Route::get('/not_logged_in', function() { view('errors.401'); });
 
 Route::get('/dashboard', function () {
     return view('dashboard');

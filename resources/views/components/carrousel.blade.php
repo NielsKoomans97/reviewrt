@@ -1,5 +1,5 @@
 <div class="carrousel" data-itemsize="{{ $itemSize }}">
-    <x-icon icon-code="arrow-bar-left" />
+    <button class="scroll-back"><x-icon icon-code="arrow-bar-left" /></button>
     {{ $slot }}
-    <x-icon icon-code="arrow-bar-right" />
+    <button class="scroll-forward"><x-icon icon-code="arrow-bar-right" /></button>
 </div>

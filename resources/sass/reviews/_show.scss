@@ -5,11 +5,48 @@ div.review-details{
 
     flex-direction: column;
 
+    height: -webkit-fill-available;
+
     h2{
         margin-top: unset;
     }
 
     span.review-summary{
         margin-top: 25px;
+    }
+}
+
+div.comments{
+    display: flex;
+
+    flex-direction: column;
+
+    height: 40vh;
+
+    overflow-y: scroll;
+
+    div.new-comment{
+        margin-bottom: 15px;
+    }
+
+    div.comment{
+        display: flex;
+
+        flex-direction: column;
+        padding: 10px 0;
+
+        border-bottom: 2px solid map-get($map: $colors, $key: button-active);
+    }
+
+    textarea#comment-summary{
+        width: -webkit-fill-available;
+        
+        &.collapsed{
+            height: 2vh;
+        }
+
+        &.expanded{
+            height: 5vh;
+        }
     }
 }

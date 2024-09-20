@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comment;
+use \Auth;
 use Illuminate\Http\Request;
 
 class CommentController extends Controller
@@ -10,10 +11,7 @@ class CommentController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        //
-    }
+    public function index() {}
 
     /**
      * Show the form for creating a new resource.
@@ -28,7 +26,12 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $comment = new Comment();
+        $comment->review_id = $request['review-id'];
+        $comment->user_id = Auth::id();
+        $comment->title = '';
+        $comment->description = $request['comment-summary'];
+        $comment->save();
     }
 
     /**
@@ -36,7 +39,6 @@ class CommentController extends Controller
      */
     public function show(Comment $comment)
     {
-        //
     }
 
     /**
@@ -60,6 +62,10 @@ class CommentController extends Controller
      */
     public function destroy(Comment $comment)
     {
-        //
+        $review_id = $comment->review->id;
+
+        $comment->delete();
+
+        redirect(route('reviews.show', $review_id));
     }
 }

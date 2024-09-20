@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ProfileController;
@@ -18,7 +19,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::resource('/', HomeController::class);
 Route::resource('reviews', ReviewController::class);
-Route::get('/not_logged_in', function() { view('errors.401'); });
+Route::resource('comments', CommentController::class);
+Route::get('/not_logged_in', function () {
+    view('errors.401');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');

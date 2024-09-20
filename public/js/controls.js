@@ -70,3 +70,15 @@ if (hasElement('.create-form')) {
         }
     }
 }
+
+if (hasElement('textarea#comment-summary')){
+    const commentSummary = document.querySelector('#comment-summary');
+
+    commentSummary.addEventListener('click', () => {
+        commentSummary.classList.replace('collapsed', 'expanded');
+    });
+
+    commentSummary.addEventListener('focusout', () => {
+        commentSummary.classList.replace('expanded', 'collapsed');
+    });
+}

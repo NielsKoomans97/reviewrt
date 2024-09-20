@@ -1,0 +1,15 @@
+@use '../config/variables' as *;
+
+div.review-details{
+    display: flex;
+
+    flex-direction: column;
+
+    h2{
+        margin-top: unset;
+    }
+
+    span.review-summary{
+        margin-top: 25px;
+    }
+}

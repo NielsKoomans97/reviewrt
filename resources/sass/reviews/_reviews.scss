@@ -6,17 +6,46 @@ div.review-list{
     flex-direction: column;
 }
 
-a.review{
-    display: flex;
+div.review{
+    display: grid;
 
-    flex-direction: column;
+    grid-template-columns: auto 10%;
+    grid-template-rows: repeat(3, calc(100% / 3));
+
     align-items: flex-start;
-
+    background-color: map-get($map: $colors, $key: button-default);
+    
+    margin: 10px 0;
+    padding: 5px;
+    
     width: -webkit-fill-available;
-
-    border-radius: unset;
 
     h3{
         margin-top: unset;
+
+        &.title{
+            grid-column: 1;
+            grid-row: 1;
+        }
+    }   
+
+    span.comment_count{
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    span.creator{
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    a.destroy-review{
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    a.edit-review{
+        grid-column: 2;
+        grid-row: 2;
     }
 }

@@ -11,6 +11,11 @@
         <a class="login-button" href="{{ route('login') }}">Inloggen</a>
     @else
         <span class="user-name">{{ Auth::user()->name }}</span>
-        <a class="login-button" href="{{ route('logout') }}"><x-icon iconCode="box-arrow-right"/></a>
+        <form action="{{ route('logout') }}" method="post">
+            @csrf
+
+            <input type="hidden" name="user-id" id="user-id" value="{{ Auth::id() }}" />
+            <button onclick="form.submit();">Uitloggen</button>
+        </form>
     @endif
 </div>

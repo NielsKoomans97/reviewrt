@@ -42,8 +42,6 @@ body {
 
     display: flex;
     flex-direction: column;
-
-    background-color: map-get($map: $colors, $key: body-default);
 }
 
 section {

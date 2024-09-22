@@ -3,7 +3,7 @@
 header{
     display: flex;
 
-    background-color: map-get($map: $colors, $key: body-default);
+    height: 7vh;
 }
 
 nav.nav-menu{
@@ -17,16 +17,17 @@ nav.nav-menu{
 div.login-container{
     display: flex;
     align-items: center;
+    justify-items: center;
 
-    width: 10%;
+    justify-content: space-between;
+
+    width: 15%;
 
     margin: 10px 0;
 
-    a{
-        width: 100%;
-    }
-
     span{
         margin-right: 5px;
+
+        text-overflow: ellipsis;
     }
 }

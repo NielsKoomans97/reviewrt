@@ -32,14 +32,14 @@ class CommentController extends Controller
         $comment->title = '';
         $comment->description = $request['comment-summary'];
         $comment->save();
+
+        return redirect(route('reviews.show', $request['review-id']));
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Comment $comment)
-    {
-    }
+    public function show(Comment $comment) {}
 
     /**
      * Show the form for editing the specified resource.
@@ -66,6 +66,6 @@ class CommentController extends Controller
 
         $comment->delete();
 
-        redirect(route('reviews.show', $review_id));
+        return redirect(route('reviews.show', $review_id));
     }
 }

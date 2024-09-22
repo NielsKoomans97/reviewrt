@@ -193,4 +193,135 @@
 //     }
 // }
 
+section.create-form{
+    display: flex;
 
+    flex-direction: column;
+
+    padding: 0;
+
+    form{
+        display: grid;
+
+        grid-template-columns: auto 70%;
+        column-gap: 10px;
+
+        div.movie-details{
+            display: grid;
+
+            grid-template-columns: auto 10%;
+            grid-template-rows: 30px auto;
+
+            row-gap: 15px;
+
+            input#movie-name{
+                grid-column: 1;
+                grid-row: 1;
+
+                margin-right: 5px;
+            }
+
+            a.search-movie{
+                grid-column: 2;
+                grid-row: 1;
+
+                border-radius: 4px;
+            }
+
+            div.result-list{
+                grid-column: 1 / span 2;
+                grid-row: 2;
+
+                max-height: 65vh;
+                overflow-y: auto;
+            }
+
+            div.result-list div.movie{
+                display: grid;
+
+                grid-template-columns: 45px auto;
+                grid-template-rows: repeat(2, 50%);
+
+                column-gap: 10px;
+
+                align-items: center;
+                cursor: pointer;
+
+                transition: 150ms all;
+
+                img{
+                    grid-column: 1;
+                    grid-row: 1 / span 2;
+
+                    width: 100%;
+                }
+
+                h4.title{
+                    grid-column: 2;
+                    grid-row: 1;
+                }
+
+                span.year{
+                    grid-column: 2;
+                    grid-row: 2;
+                }
+
+                &.unselected{
+                    background-color: transparent;
+                }
+
+                &.selected{
+                    background-color: map-get($map: $colors, $key: button-hover);
+                }
+
+                &:hover{
+                    background-color: map-get($map: $colors, $key: button-hover);
+                }
+
+                &:active{
+                    background-color: map-get($map: $colors, $key: button-active);
+                }
+
+             
+            }
+        }
+
+        div.review-details{
+            display: flex;
+
+            flex-direction: column;
+
+            div.form-group{
+                display: flex;
+
+                flex-direction: column;
+
+                h4{
+                    margin: 10px 0 5px 0;
+                }
+
+                &:first-child{
+                    h4{
+                        margin: 0 0 5px 0;
+                    }
+                }
+
+                input, textarea{
+                    width: -webkit-fill-available;
+                }
+
+                textarea{
+                    height: 50vh;
+                }
+
+                &.horizontal{
+                    display: grid;
+                    
+                    grid-template-columns: repeat(2, 130px);
+
+                    margin-top: 15px;
+                }
+            }
+        }
+    }
+}

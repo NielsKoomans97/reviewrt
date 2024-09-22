@@ -32,7 +32,7 @@ function hasElement(query) {
     return document.querySelector(query) != null || document.querySelectorAll(query) != null;
 }
 
-if (hasElement('.create-form')) {
+if (hasElement('.create-form') || hasElement('.edit-form')) {
     const createFormSection = document.querySelector('.create-form');
 
     if (createFormSection != null) {
@@ -61,10 +61,12 @@ if (hasElement('.create-form')) {
                     movieItem.appendChild(poster);
 
                     let title = document.createElement('h4');
+                    title.className = 'title';
                     title.innerText = data['title'];
                     movieItem.appendChild(title);
 
                     let year = document.createElement('span');
+                    year.className = 'year';
                     year.innerText = data['release_date'];
                     movieItem.appendChild(year);
 

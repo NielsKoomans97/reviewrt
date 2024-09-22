@@ -6,6 +6,10 @@ section.review-overview{
     grid-template-columns: auto 30%;
     grid-template-rows: 100px auto;
 
+    column-gap: 25px;
+    
+    padding: 0;
+
     div.review-details{
         grid-column: 1;
         grid-row: 1 / span 2;

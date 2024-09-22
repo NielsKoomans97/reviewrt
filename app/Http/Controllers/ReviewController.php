@@ -44,6 +44,8 @@ class ReviewController extends Controller
         $review->movie_id = $request['movie-id'];
 
         $review->save();
+
+        return redirect(route('reviews.show', $review));
     }
 
     /**

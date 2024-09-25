@@ -44,7 +44,7 @@
                     <span class="comment-summary">{{ $comment->description }}</span>
                     <span class="comment-user"><b>{{ $comment->user->name }}</b></span>
 
-                    @if (Auth::check())
+                    @if (Auth::check() && (Auth::id() == $comment->user_id))
                         <form action="{{ route('comments.destroy', $comment) }}" method="post">
                             @csrf
                             @method('DELETE')

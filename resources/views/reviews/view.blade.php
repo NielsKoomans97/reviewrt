@@ -2,7 +2,7 @@
 
 @section('content')
     <section class="review-overview">
-         <div class="movie-details" data-id="{{ $review->movie_id }}">
+        <div class="movie-details" data-id="{{ $review->movie_id }}">
             <img class="movie-poster">
             <span class="movie-title"></span>
             <span class="movie-date"></span>
@@ -10,6 +10,15 @@
         <div class="review-details">
             <h2>{{ $review->title }}</h2>
             <span class="review-user">door <b>{{ $review->creator->name }}</b></span>
+            <div class="button-group">
+                <form action="{{ route('reviews.destroy', $review) }}" method="post">
+                    @csrf
+                    @method('DELETE')
+                    <button class="destroy-review" onclick="form.submit();">Verwijderen<x-icon iconCode="trash" /></button>
+                </form>
+                <a class="edit-review" href="{{ route('reviews.edit', $review) }}">Bewerken<x-icon iconCode="pencil" /></a>
+            </div>
+            
             <span class="review-summary">{!! $review->description !!}</h2>
         </div>
         <div class="comments">
@@ -34,8 +43,8 @@
                     @if (Auth::check())
                         <form action="{{ route('comments.destroy', $comment) }}" method="post">
                             @csrf
-                            @method("DELETE")
-                            
+                            @method('DELETE')
+
                             <button onclick="form.submit();"><x-icon iconCode="trash" /></button>
                         </form>
                     @endif

@@ -21,7 +21,10 @@ nav.nav-menu {
 }
 
 div.login-container {
-    display: flex;
+    display: grid;
+
+    grid-template-columns: repeat(2, auto);
+
     align-items: center;
     justify-items: center;
 
@@ -34,8 +37,14 @@ div.login-container {
     margin: 10px 0;
 
     span {
+        grid-column: 1;
+
         margin-right: 5px;
 
         text-overflow: ellipsis;
+    }
+
+    button, a{
+        grid-column: 2;
     }
 }

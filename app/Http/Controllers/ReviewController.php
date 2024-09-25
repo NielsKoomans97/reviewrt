@@ -90,8 +90,12 @@ class ReviewController extends Controller
             return redirect('login');
         }
 
+        foreach ($review->comments as $comment) {
+            $comment->delete();
+        }
+
         $review->delete();
 
-        return redirect('reviews.index');
+        return redirect(route('reviews.index'));
     }
 }

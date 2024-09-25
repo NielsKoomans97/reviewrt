@@ -14,7 +14,6 @@
         <form action="{{ route('logout') }}" method="post">
             @csrf
 
-            <input type="hidden" name="user-id" id="user-id" value="{{ Auth::id() }}" />
             <button onclick="form.submit();">Uitloggen</button>
         </form>
     @endif

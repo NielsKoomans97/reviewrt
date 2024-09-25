@@ -61,7 +61,11 @@ class ReviewController extends Controller
      */
     public function edit(Review $review)
     {
-        //
+        if (!Auth::check()) {
+            return redirect('login');
+        }
+
+        return view('reviews.edit', compact('review'));
     }
 
     /**
@@ -69,7 +73,12 @@ class ReviewController extends Controller
      */
     public function update(Request $request, Review $review)
     {
-        //
+        $review->title = $request['review-title'];
+        $review->description = $request['review-summary'];
+
+        $review->save();
+
+        return redirect(route('reviews.show', $review));
     }
 
     /**
@@ -77,6 +86,12 @@ class ReviewController extends Controller
      */
     public function destroy(Review $review)
     {
-        //
+        if (!Auth::check()) {
+            return redirect('login');
+        }
+
+        $review->delete();
+
+        return redirect('reviews.index');
     }
 }

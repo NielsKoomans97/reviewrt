@@ -1,31 +1,39 @@
-@use '../config/variables' as *;
+@use "../config/variables" as *;
 
-header{
-    display: flex;
+header {
+    display: grid;
+
+    grid-template-rows: auto;
+    grid-template-columns: repeat(2, auto);
 
     height: 7vh;
+    width: -webkit-fill-available;
 }
 
-nav.nav-menu{
+nav.nav-menu {
     display: flex;
+
+    grid-column: 1;
 
     width: -webkit-fill-available;
 
     margin: 10px 0;
 }
 
-div.login-container{
+div.login-container {
     display: flex;
     align-items: center;
     justify-items: center;
 
+    grid-column: 2;
+    justify-self: flex-end;
     justify-content: space-between;
 
-    width: 15%;
+    width: 30%;
 
     margin: 10px 0;
 
-    span{
+    span {
         margin-right: 5px;
 
         text-overflow: ellipsis;

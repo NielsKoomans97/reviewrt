@@ -1,3 +1,5 @@
+import { TmdbWrapper } from './tmdb.js';
+
 async function FetchData(path) {
     let baseUrl = `https://api.themoviedb.org/3/${path}`;
 
@@ -14,7 +16,7 @@ async function FetchData(path) {
     return json;
 }
 
-async function SetMovieDetails(){
+async function SetMovieDetails() {
     const movieDetailSection = document.querySelector('div.movie-details');
     const movieId = movieDetailSection.getAttribute('data-id');
     const data = await FetchData(`movie/${movieId}`);
@@ -25,8 +27,16 @@ async function SetMovieDetails(){
 
     poster.setAttribute('src', `https://image.tmdb.org/t/p/w200${data['poster_path']}`);
     title.innerText = data['title'];
-    date.innerText = data['release_date']
+    date.innerText = data['release_date'];
+
+    const tmdbWrapper = new TmdbWrapper('eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmMDg3ZjcxOWFlZTMzNGE3ODdlYTQ3MmZkZTkyZTc2YyIsIm5iZiI6MTcyNjY3MjE1OS4xOTAxNzEsInN1YiI6IjYzZTU4ZTY2YTNkMDI3MDA5MTYwMzcyYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.IyHngUbMb0zycCvrzwjDE2hC7HP2SwY8S2VSgr1DJT4');
+    await tmdbWrapper.Search('movie', 'iron', 
+        { 'page': 2 },
+    );
+
 }
+
+
 
 function hasElement(query) {
     return document.querySelector(query) != null || document.querySelectorAll(query) != null;
@@ -89,7 +99,7 @@ if (hasElement('.create-form') || hasElement('.edit-form')) {
 }
 
 if (hasElement('section.movie-details')) {
-   SetMovieDetails();
+    SetMovieDetails();
 }
 
 if (hasElement('#comment-summary')) {

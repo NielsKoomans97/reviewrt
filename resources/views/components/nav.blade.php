@@ -1,5 +1,5 @@
 <nav class="nav-menu">
-    <a href="/home">Home</a>
+    <a href="/">Home</a>
     <a href="{{ route('reviews.index') }}">Alle reviews</a>
 
     @if (Auth::check())

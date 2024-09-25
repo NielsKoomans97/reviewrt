@@ -1,12 +1,12 @@
-@use '../config/variables' as *;
+@use "../config/variables" as *;
 
-div.review-list{
+div.review-list {
     display: flex;
-    
+
     flex-direction: column;
 }
 
-div.review{
+div.review {
     display: grid;
 
     grid-template-columns: auto 10%;
@@ -14,39 +14,39 @@ div.review{
 
     align-items: center;
     background-color: map-get($map: $colors, $key: button-default);
-    
+
     margin: 10px 0;
     padding: 15px;
 
     border-radius: 4px;
-    
+
     width: -webkit-fill-available;
 
-    h3{
+    h3 {
         margin-top: unset;
 
-        &.title{
+        &.title {
             grid-column: 1;
             grid-row: 1;
         }
-    }   
+    }
 
-    span.comment_count{
+    span.comment_count {
         grid-column: 1;
         grid-row: 2;
     }
 
-    span.creator{
+    span.creator {
         grid-column: 1;
         grid-row: 3;
     }
 
-    a.destroy-review{
+    a.destroy-review {
         grid-column: 2;
         grid-row: 1;
     }
 
-    a.edit-review{
+    a.edit-review {
         grid-column: 2;
         grid-row: 2;
     }

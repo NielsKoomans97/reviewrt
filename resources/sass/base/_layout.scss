@@ -3,11 +3,6 @@
 
 body {
     margin: 0 auto;
-
-    box-sizing: border-box;
-
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
     @include screen-xxxl {
         width: $screen-xxl;
     }
@@ -37,9 +32,16 @@ body {
     }
 }
 
+*{
+    box-sizing: border-box;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1em;
+}
+
 .content{
     height: 93vh;
-
+    
     display: flex;
     flex-direction: column;
 }

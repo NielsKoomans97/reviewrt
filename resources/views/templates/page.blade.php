@@ -7,7 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-    <script src="/js/controls.js" defer></script>
+    <script src="/js/controls.js" type="module" defer></script>
 </head>
 
 <body>

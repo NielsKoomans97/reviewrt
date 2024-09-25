@@ -25,7 +25,7 @@
                 </div>
                 <div class="form-group horizontal">
                     <input type="submit" value="Opslaan" name="review-submit" id="review-submit" />
-                    <a href="{{ route('reviews.index') }}">Annuleren</a>
+                    <a href="{{ route('reviews.show', $review) }}">Annuleren</a>
                 </div>
             </div>
         </form>

@@ -10,15 +10,19 @@
         <div class="review-details">
             <h2>{{ $review->title }}</h2>
             <span class="review-user">door <b>{{ $review->creator->name }}</b></span>
-            <div class="button-group">
-                <form action="{{ route('reviews.destroy', $review) }}" method="post">
-                    @csrf
-                    @method('DELETE')
-                    <button class="destroy-review" onclick="form.submit();">Verwijderen<x-icon iconCode="trash" /></button>
-                </form>
-                <a class="edit-review" href="{{ route('reviews.edit', $review) }}">Bewerken<x-icon iconCode="pencil" /></a>
-            </div>
-            
+
+            @if (Auth::check())
+                <div class="button-group">
+                    <form action="{{ route('reviews.destroy', $review) }}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <button class="destroy-review" onclick="form.submit();">Verwijderen<x-icon
+                                iconCode="trash" /></button>
+                    </form>
+                    <a class="edit-review" href="{{ route('reviews.edit', $review) }}">Bewerken<x-icon
+                            iconCode="pencil" /></a>
+                </div>
+            @endif
             <span class="review-summary">{!! $review->description !!}</h2>
         </div>
         <div class="comments">

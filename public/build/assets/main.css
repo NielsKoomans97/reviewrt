@@ -1,0 +1,514 @@
+a,
+button,
+input[type=submit] {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  outline: unset;
+  border: unset;
+  padding: 10px;
+  transition: 150ms all;
+  color: black;
+  font-size: 1em;
+  text-decoration: none;
+  background-color: #dccd9d;
+  border-bottom: 2px solid transparent;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
+}
+a:hover,
+button:hover,
+input[type=submit]:hover {
+  background-color: #cfba74;
+  border-bottom: 2px solid #ae9c62;
+}
+a:active,
+button:active,
+input[type=submit]:active {
+  background-color: #ae9c62;
+}
+a:first-child,
+button:first-child,
+input[type=submit]:first-child {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+a:last-child,
+button:last-child,
+input[type=submit]:last-child {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+a:has(i),
+button:has(i),
+input[type=submit]:has(i) {
+  padding: 5px;
+}
+a i,
+button i,
+input[type=submit] i {
+  font-size: 1.2em;
+}
+
+input[type=text],
+input[type=number],
+input[type=email],
+input[type=password],
+textarea {
+  border-radius: 4px;
+  outline: unset;
+  border: 1px solid #cfba74;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1em;
+  padding: 5px;
+}
+
+body {
+  margin: 0 auto;
+}
+@media (min-width: 2000px) {
+  body {
+    width: 1400px;
+  }
+}
+@media (min-width: 1400px) and (max-width: 2000px) {
+  body {
+    width: 1200px;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1400px) {
+  body {
+    width: 992px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+  body {
+    width: 768px;
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  body {
+    width: 576px;
+  }
+}
+@media (min-width: 576px) and (max-width: 768px) {
+  body {
+    width: 100vw;
+  }
+}
+@media (max-width: 576px) {
+  body {
+    width: 100vw;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1em;
+}
+
+.content {
+  height: 93vh;
+  display: flex;
+  flex-direction: column;
+}
+
+section {
+  padding: 40px 0;
+}
+
+.container {
+  display: flex;
+}
+.container.flex {
+  display: flex;
+}
+.container.grid {
+  display: grid;
+}
+
+header {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(2, auto);
+  height: 7vh;
+  width: -webkit-fill-available;
+}
+
+nav.nav-menu {
+  display: flex;
+  grid-column: 1;
+  width: -webkit-fill-available;
+  margin: 10px 0;
+}
+
+div.login-container {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  align-items: center;
+  justify-items: center;
+  grid-column: 2;
+  justify-self: flex-end;
+  justify-content: space-between;
+  width: 30%;
+  margin: 10px 0;
+}
+div.login-container span {
+  grid-column: 1;
+  margin-right: 5px;
+  text-overflow: ellipsis;
+}
+div.login-container button, div.login-container a {
+  grid-column: 2;
+}
+
+div.carrousel {
+  position: relative;
+  display: grid;
+  grid-template-rows: 100%;
+  grid-template-columns: repeat(10, auto);
+  align-items: center;
+  overflow: hidden;
+  width: 500px;
+  border-radius: 4px;
+  padding: 0 50px;
+}
+div.carrousel button {
+  position: absolute;
+  height: 100%;
+  border: unset;
+  outline: unset;
+  background-color: rgba(220, 205, 157, 0.2);
+  transition: 150ms all;
+  cursor: pointer;
+}
+div.carrousel button i {
+  background-color: transparent;
+  color: rgba(15, 17, 16, 0.2);
+  font-size: 24px;
+}
+div.carrousel button.scroll-back {
+  margin-right: 10px;
+  justify-self: flex-start;
+}
+div.carrousel button.scroll-forward {
+  margin-left: 10px;
+  justify-self: flex-end;
+}
+div.carrousel button:hover {
+  background-color: #cfba74;
+}
+div.carrousel button:hover i {
+  color: #0f1110;
+}
+div.carrousel button:active {
+  background-color: #ae9c62;
+}
+div.carrousel button:active i {
+  color: #0f1110;
+}
+
+section.create-form {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+section.create-form form {
+  display: grid;
+  grid-template-columns: auto 70%;
+  column-gap: 10px;
+}
+section.create-form form div.movie-details {
+  display: grid;
+  grid-template-columns: auto 10%;
+  grid-template-rows: 30px auto;
+  row-gap: 15px;
+}
+section.create-form form div.movie-details input#movie-name {
+  grid-column: 1;
+  grid-row: 1;
+  margin-right: 5px;
+}
+section.create-form form div.movie-details a.search-movie {
+  grid-column: 2;
+  grid-row: 1;
+  border-radius: 4px;
+}
+section.create-form form div.movie-details div.result-list {
+  grid-column: 1/span 2;
+  grid-row: 2;
+  max-height: 65vh;
+  overflow-y: auto;
+}
+section.create-form form div.movie-details div.result-list div.movie {
+  display: grid;
+  grid-template-columns: 45px auto;
+  grid-template-rows: repeat(2, 50%);
+  column-gap: 10px;
+  align-items: center;
+  cursor: pointer;
+  transition: 150ms all;
+}
+section.create-form form div.movie-details div.result-list div.movie img {
+  grid-column: 1;
+  grid-row: 1/span 2;
+  width: 100%;
+}
+section.create-form form div.movie-details div.result-list div.movie h4.title {
+  grid-column: 2;
+  grid-row: 1;
+}
+section.create-form form div.movie-details div.result-list div.movie span.year {
+  grid-column: 2;
+  grid-row: 2;
+}
+section.create-form form div.movie-details div.result-list div.movie.unselected {
+  background-color: transparent;
+}
+section.create-form form div.movie-details div.result-list div.movie.selected {
+  background-color: #cfba74;
+}
+section.create-form form div.movie-details div.result-list div.movie:hover {
+  background-color: #cfba74;
+}
+section.create-form form div.movie-details div.result-list div.movie:active {
+  background-color: #ae9c62;
+}
+section.create-form form div.review-details {
+  display: flex;
+  flex-direction: column;
+}
+section.create-form form div.review-details div.form-group {
+  display: flex;
+  flex-direction: column;
+}
+section.create-form form div.review-details div.form-group h4 {
+  margin: 10px 0 5px 0;
+}
+section.create-form form div.review-details div.form-group:first-child h4 {
+  margin: 0 0 5px 0;
+}
+section.create-form form div.review-details div.form-group input, section.create-form form div.review-details div.form-group textarea {
+  width: -webkit-fill-available;
+}
+section.create-form form div.review-details div.form-group textarea {
+  height: 50vh;
+}
+section.create-form form div.review-details div.form-group.horizontal {
+  display: grid;
+  grid-template-columns: repeat(2, 130px);
+  margin-top: 15px;
+}
+
+div.review-list {
+  display: flex;
+  flex-direction: column;
+}
+
+div.review {
+  display: grid;
+  grid-template-columns: auto 10%;
+  grid-template-rows: repeat(3, 33.3333333333%);
+  align-items: center;
+  background-color: #dccd9d;
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 4px;
+  width: -webkit-fill-available;
+}
+div.review h3 {
+  margin-top: unset;
+}
+div.review h3.title {
+  grid-column: 1;
+  grid-row: 1;
+}
+div.review span.comment_count {
+  grid-column: 1;
+  grid-row: 2;
+}
+div.review span.creator {
+  grid-column: 1;
+  grid-row: 3;
+}
+div.review a.destroy-review {
+  grid-column: 2;
+  grid-row: 1;
+}
+div.review a.edit-review {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+section.review-overview {
+  display: grid;
+  grid-template-columns: auto 30%;
+  grid-template-rows: 100px auto;
+  column-gap: 25px;
+  padding: 0;
+}
+section.review-overview div.review-details {
+  grid-column: 1;
+  grid-row: 1/span 2;
+  display: flex;
+  flex-direction: column;
+}
+section.review-overview div.review-details div.button-group {
+  display: flex;
+  justify-content: flex-start;
+  margin: 25px 0;
+}
+section.review-overview div.review-details div.button-group a,
+section.review-overview div.review-details div.button-group button {
+  border-radius: unset;
+  height: 100%;
+}
+section.review-overview div.review-details div.button-group a {
+  padding: 7px;
+}
+section.review-overview div.review-details div.button-group a i {
+  margin-left: 10px;
+}
+section.review-overview div.review-details span.review-summary {
+  padding: 25px 0;
+}
+section.review-overview div.movie-details {
+  grid-column: 2;
+  grid-row: 1;
+  display: grid;
+  grid-template-columns: 20% auto;
+  grid-template-rows: repeat(2, 50%);
+  align-items: center;
+  padding: 5px 0;
+  border-bottom: 2px solid #ae9c62;
+}
+section.review-overview div.movie-details img.movie-poster {
+  height: 100%;
+  grid-column: 1;
+  grid-row: 1/span 2;
+}
+section.review-overview div.movie-details span.movie-title {
+  grid-column: 2;
+  grid-row: 1;
+  font-size: 1.4em;
+  font-weight: 600;
+}
+section.review-overview div.movie-details span.movie-year {
+  grid-column: 2;
+  grid-row: 2;
+}
+section.review-overview div.comments {
+  grid-column: 2;
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+  max-height: 65vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+section.review-overview div.comments div.new-comment {
+  display: flex;
+  flex-direction: column;
+  margin: 5px 0;
+}
+section.review-overview div.comments div.new-comment textarea {
+  width: -webkit-fill-available;
+}
+section.review-overview div.comments div.new-comment textarea.collapsed {
+  height: min-content;
+}
+section.review-overview div.comments div.new-comment textarea.expanded {
+  height: 85px;
+}
+section.review-overview div.comments div.comment {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  align-items: center;
+  margin: 10px 0;
+  padding: 5px 0;
+  border-bottom: 2px solid #ae9c62;
+}
+section.review-overview div.comments div.comment span.comment-summary {
+  grid-column: 1/span 2;
+  grid-row: 1;
+  padding: 5px 0;
+}
+section.review-overview div.comments div.comment span.comment-user {
+  grid-column: 1;
+  grid-row: 2;
+}
+section.review-overview div.comments div.comment form {
+  grid-column: 2;
+  grid-row: 2;
+}
+section.review-overview div.comments div.comment form button {
+  width: 100%;
+}
+
+section.edit-form {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  height: -webkit-fill-available;
+}
+section.edit-form form {
+  display: grid;
+  grid-template-columns: auto 70%;
+  grid-template-rows: auto auto;
+  margin-bottom: 25px;
+  column-gap: 10px;
+  width: -webkit-fill-available;
+  height: 100%;
+}
+section.edit-form div.movie-details {
+  grid-column: 1;
+  grid-row: 1/span 2;
+  display: grid;
+  grid-template-columns: min-content auto;
+  grid-template-rows: 60px 60px auto;
+  column-gap: 15px;
+  align-items: center;
+}
+section.edit-form div.movie-details img {
+  height: 100%;
+  grid-row: 1/span 2;
+}
+section.edit-form div.movie-details .movie-title {
+  font-size: 1.4em;
+  font-weight: 600;
+}
+section.edit-form div.review-details {
+  display: grid;
+  grid-template-rows: 60px auto 60px;
+  grid-column: 2;
+  grid-row: 1/span 2;
+}
+section.edit-form div.review-details div.form-group {
+  display: flex;
+  flex-direction: column;
+}
+section.edit-form div.review-details div.form-group.review-summary {
+  height: -webkit-fill-available;
+}
+section.edit-form div.review-details div.form-group h4 {
+  margin: 10px 0 5px 0;
+}
+section.edit-form div.review-details div.form-group:first-child h4 {
+  margin: 0 0 5px 0;
+}
+section.edit-form div.review-details div.form-group input,
+section.edit-form div.review-details div.form-group textarea {
+  width: -webkit-fill-available;
+}
+section.edit-form div.review-details div.form-group textarea {
+  height: 100%;
+}
+section.edit-form div.review-details div.form-group.horizontal {
+  display: grid;
+  grid-template-columns: repeat(2, 130px);
+  margin-top: 15px;
+}
+
+/*# sourceMappingURL=main.css.map */
